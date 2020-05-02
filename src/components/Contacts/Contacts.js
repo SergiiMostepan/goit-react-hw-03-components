@@ -72,7 +72,9 @@ export default class Contacts extends Component {
         <h1> Phonebook </h1>
         <InputForm onAddContacts={this.addContacts}> </InputForm>
         <h2> Contacts </h2>
-        <Filter value={this.state.filter} onChangeFilter={this.changeFilte} />
+        {this.state.contacts.length >= 3 && (
+          <Filter value={this.state.filter} onChangeFilter={this.changeFilte} />
+        )}
         <ContactList
           contacts={
             this.state.contacts.length > 2 ? filteredTasks : this.state.contacts
